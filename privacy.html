@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="/apple-touch-icon.png" sizes="180x180" type="image/png">
+<title>Политика конфиденциальности - Артём Бахрамов (BahramovAI)</title>
+<meta name="description" content="Политика конфиденциальности bahramovai.com: какие данные собираются, как обрабатываются и хранятся, права пользователя и контакты для обращений.">
+<link rel="canonical" href="https://bahramovai.com/privacy.html">
+<link rel="alternate" type="application/rss+xml" title="Блог Артёма Бахрамова" href="https://bahramovai.com/feed.xml" />
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bahramovai.com/privacy.html">
+<meta property="og:title" content="Политика конфиденциальности - Артём Бахрамов (BahramovAI)">
+<meta property="og:description" content="Политика конфиденциальности bahramovai.com: какие данные собираются, как обрабатываются и хранятся, права пользователя и контакты для обращений.">
+<meta property="og:image" content="https://bahramovai.com/photo.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="BahramovAI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Политика конфиденциальности - Артём Бахрамов (BahramovAI)">
+<meta name="twitter:description" content="Политика конфиденциальности bahramovai.com: какие данные собираются, как обрабатываются и хранятся, права пользователя и контакты для обращений.">
+<meta name="twitter:image" content="https://bahramovai.com/photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    /* Ссылки: только фирменный оранжевый. Без синего и фиолетового по умолчанию браузера */
+    a { color: var(--orange, var(--accent, #f4672a)); }
+    /* font-fallback */
+    @font-face { font-family: 'Fira Fallback R'; src: local('Roboto'); size-adjust: 87.2%; font-weight: 100 900; }
+    @font-face { font-family: 'Fira Fallback A'; src: local('Arial'), local('Helvetica'); size-adjust: 78.7%; font-weight: 100 900; }
+    @font-face { font-family: 'Inter Fallback R'; src: local('Roboto'); size-adjust: 117.8%; font-weight: 100 900; }
+    @font-face { font-family: 'Inter Fallback A'; src: local('Arial'), local('Helvetica'); size-adjust: 107.3%; font-weight: 100 900; }
+
+    /* Переход по якорю не должен прятать заголовок под фиксированную шапку.
+       Шапка на сайте 61-81 px в зависимости от страницы и ширины экрана. */
+    [id] { scroll-margin-top: 100px; }
+
+    /* Пункты шапки не ломаются на две строки: на about.html «Обо мне»
+       и «Бонусы» разрывались на 375 px и раздували шапку до 81 px. */
+    nav .nav-link, nav .nav-bonus, nav .nav-logo, nav .nav-cta { white-space: nowrap; }
+    /* Переносы: у заголовка не остаётся одинокого слова на последней строке,
+       у абзаца - тоже. Старые браузеры свойство игнорируют, вреда нет. */
+    h1, h2, h3, h4 { text-wrap: balance; }
+    p, li, figcaption, summary { text-wrap: pretty; }
+
+  :root { --bg:#0a0a0a; --accent:#f4672a; --text:#e0e0e0; --muted: #a3a3a3; --border:#1e1e1e; --card:#111; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Inter', 'Inter Fallback R', 'Inter Fallback A', sans-serif; font-size:15px; line-height:1.8; }
+  header { border-bottom:1px solid var(--border); padding:20px 40px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  header a { font-family:'Fira Sans Extra Condensed', 'Fira Fallback R', 'Fira Fallback A', sans-serif; font-size:16.9px /*hf*/; color:var(--accent); text-decoration:none; letter-spacing:0.05em; }
+  header a:hover { text-decoration:underline; }
+  .doc-header { background:var(--card); border-bottom:2px solid var(--accent); padding:50px 40px 40px; text-align:center; }
+  .doc-header .label { font-family:'Fira Sans Extra Condensed', 'Fira Fallback R', 'Fira Fallback A', sans-serif; font-size:14.3px /*hf*/; letter-spacing:0.2em; color:var(--accent); text-transform:uppercase; margin-bottom:14px; }
+  .doc-header h1 { font-family:'Fira Sans Extra Condensed', 'Fira Fallback R', 'Fira Fallback A', sans-serif; font-size:clamp(28.6px,5.2vw,46.8px) /*hf*/; font-weight:700; color:#fff; margin-bottom:12px; }
+  .doc-header .meta { color:var(--muted); font-size:13px; }
+  .container { max-width:860px; margin:0 auto; padding:50px 30px 80px; }
+  h2 { font-family:'Fira Sans Extra Condensed', 'Fira Fallback R', 'Fira Fallback A', sans-serif; font-size:18.2px /*hf*/; font-weight:700; color:#fff; margin:40px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--border); letter-spacing:0.03em; }
+  h2 span { color:var(--accent); margin-right:8px; }
+  p { margin-bottom:12px; }
+  ul { margin:10px 0 14px 20px; }
+  li { margin-bottom:8px; }
+  strong { color:#fff; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .highlight { background:#1a1a1a; border-left:3px solid var(--accent); padding:16px 20px; border-radius:0 6px 6px 0; margin:20px 0; font-size:14px; }
+  .requisites { background:#111; border:1px solid #222; border-radius:8px; padding:24px 28px; margin:20px 0; display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media(max-width:600px){ .requisites { grid-template-columns:1fr; } }
+  .req-item .r-label { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:0.1em; display:block; margin-bottom:4px; }
+  .req-item .r-val { color:#fff; font-size:15px; font-weight:500; }
+  footer { background:var(--card); border-top:1px solid var(--border); padding:24px 40px; text-align:center; color:var(--muted); font-size:12px; line-height:2.2; }
+  footer a { color:var(--accent); text-decoration:none; margin:0 8px; }
+  footer a:hover { text-decoration:underline; }
+
+  /* На телефоне боковые поля 40 px оставляли под текст 295 px, и слово
+     «конфиденциальности» не влезало в строку - заголовок рвался посередине
+     слова. Поля уменьшены, длинные слова снова помещаются целиком. */
+  @media (max-width: 600px) {
+    header { padding: 16px 20px; }
+    .doc-header { padding: 36px 20px 28px; }
+    .container { padding: 32px 20px 36px; }
+    footer { padding: 24px 20px; }
+  }
+
+        /* Длинные слова не вылезают за край на узких экранах */
+        @media (max-width: 700px) {
+            h1, h2, h3, h4, .hero-title, .article h1, .article h2 { overflow-wrap: break-word; -webkit-hyphens: auto; hyphens: auto; }
+        }
+    </style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(110081984, "init", {
+        webvisor:true,
+        clickmap:true,
+        accurateTrackBounce:true,
+        trackLinks:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110081984" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://bahramovai.com/privacy.html",
+  "name": "Политика конфиденциальности",
+  "url": "https://bahramovai.com/privacy.html",
+  "inLanguage": "ru",
+  "description": "Политика конфиденциальности BahramovAI: какие данные собираются, как используются и как их удалить.",
+  "isPartOf": {
+    "@id": "https://bahramovai.com/#website"
+  },
+  "about": {
+    "@id": "https://bahramovai.com/#business"
+  },
+  "publisher": {
+    "@type": "Person",
+    "@id": "https://bahramovai.com/#person",
+    "name": "Артём Бахрамов"
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <a href="index.html">← На главную</a>
+  <a href="/uslugi/">Услуги и цены</a>
+  <a href="https://t.me/bahramovartem_bot" target="_blank" rel="noopener noreferrer">🎁 Бонусы</a>
+</header>
+
+<div class="doc-header">
+  <div class="label">Юридический документ · Республика Беларусь</div>
+  <h1>Политика конфиденциальности</h1>
+  <p class="meta">Редакция от 30 октября 2026 г.</p>
+</div>
+
+<div class="container">
+
+  <div class="highlight">
+    Настоящая Политика разработана в соответствии с Законом Республики Беларусь от 7 мая 2021 г. № 99-З «О защите персональных данных» и определяет порядок сбора, хранения и обработки персональных данных пользователей.
+  </div>
+
+  <h2><span>1.</span> Оператор персональных данных</h2>
+  <div class="requisites">
+    <div class="req-item">
+      <span class="r-label">Оператор</span>
+      <span class="r-val">Артём Бахрамов</span>
+    </div>
+    <div class="req-item">
+      <span class="r-label">Контакт</span>
+      <span class="r-val"><a href="https://t.me/bahramovartsiom" target="_blank" rel="noopener noreferrer">Telegram</a> · <a href="https://t.me/bahramovartem_bot" target="_blank" rel="noopener noreferrer">@bahramovartem_bot</a></span>
+    </div>
+  </div>
+
+  <h2><span>2.</span> Какие данные собираются</h2>
+  <ul>
+    <li>Имя, фамилия или имя пользователя;</li>
+    <li>Номер телефона (при наличии);</li>
+    <li>Адрес электронной почты (при наличии);</li>
+    <li>Telegram-аккаунт и переписка в рамках оказания услуг;</li>
+    <li>Иные данные, добровольно переданные при заказе услуг;</li>
+    <li>Технические данные: IP-адрес, тип браузера - собираются автоматически при посещении сайта.</li>
+  </ul>
+
+  <h2><span>3.</span> Цели обработки</h2>
+  <ul>
+    <li>Заключение и исполнение договора об оказании услуг;</li>
+    <li>Связь с Заказчиком по вопросам услуг и поддержки;</li>
+    <li>Направление информационных и рекламных рассылок (при наличии согласия);</li>
+    <li>Выполнение требований законодательства Республики Беларусь.</li>
+  </ul>
+
+  <h2><span>4.</span> Правовые основания обработки</h2>
+  <ul>
+    <li>Исполнение договора (ст. 6 Закона № 99-З);</li>
+    <li>Согласие субъекта персональных данных;</li>
+    <li>Законные интересы Оператора;</li>
+    <li>Требование законодательства.</li>
+  </ul>
+
+  <h2><span>5.</span> Передача данных третьим лицам</h2>
+  <p>Оператор не продаёт и не передаёт персональные данные третьим лицам, кроме случаев:</p>
+  <ul>
+    <li>Прямо предусмотренных законодательством РБ;</li>
+    <li>Сервисов, необходимых для оказания услуг (Telegram, облачное хранение) - в минимально необходимом объёме;</li>
+    <li>Явного согласия субъекта.</li>
+  </ul>
+
+  <h2><span>6.</span> Сроки хранения</h2>
+  <ul>
+    <li>Данные клиентов - <strong>3 года</strong> с момента последнего взаимодействия;</li>
+    <li>Данные рассылок при отсутствии активности - <strong>1 год</strong>.</li>
+  </ul>
+  <p>По истечении сроков данные удаляются или обезличиваются.</p>
+
+  <h2><span>7.</span> Права субъекта</h2>
+  <p>В соответствии с Законом № 99-З каждый субъект вправе:</p>
+  <ul>
+    <li>Получить сведения об обрабатываемых данных;</li>
+    <li>Требовать исправления неточных данных;</li>
+    <li>Требовать удаления данных («право быть забытым»);</li>
+    <li>Отозвать согласие в любое время;</li>
+    <li>Обратиться в <strong>Национальный центр защиты персональных данных РБ</strong>.</li>
+  </ul>
+  <p>Для реализации прав - <a href="https://t.me/bahramovartsiom" target="_blank" rel="noopener noreferrer">написать в Telegram</a>. Срок ответа - <strong>15 рабочих дней</strong>.</p>
+
+  <h2><span>8.</span> Безопасность</h2>
+  <p>Оператор принимает разумные технические и организационные меры для защиты данных от несанкционированного доступа, изменения или уничтожения.</p>
+
+  <h2 id="cookie"><span>9.</span> Файлы cookie и статистика</h2>
+  <p>На сайте работает сервис статистики Яндекс Метрика. Он ставит файлы cookie и собирает данные о посещении: какие страницы открыты, откуда пришёл посетитель, сколько времени провёл, какие кнопки нажал, тип устройства и браузера, примерный регион по IP-адресу. Запись действий на странице (Вебвизор) помогает понять, удобно ли пользоваться сайтом.</p>
+  <p>Эти данные нужны только для статистики и улучшения сайта. Оператор не использует их, чтобы узнать, кто именно зашёл на сайт. Данные обрабатывает ООО ЯНДЕКС по своим правилам - <a href="https://yandex.ru/legal/metrica_termsofuse/" target="_blank" rel="noopener">условия использования Яндекс Метрики</a>.</p>
+  <p>Ещё сайт запоминает в браузере, что вы нажали кнопку Принять на плашке о cookie, чтобы не показывать её снова.</p>
+  <p>Отключить cookie можно в настройках браузера, а отказаться от Метрики - <a href="https://yandex.ru/support/metrica/general/opt-out.html" target="_blank" rel="noopener">блокировщиком Яндекс Метрики</a>. Сайт продолжит работать.</p>
+
+  <h2><span>10.</span> Изменения политики</h2>
+  <p>Актуальная версия всегда доступна на сайте. Продолжение использования услуг после публикации изменений означает согласие с новой редакцией.</p>
+
+</div>
+
+<!-- sf-nav:start -->
+<style>
+.sf-nav{position:static!important;inset:auto!important;transform:none!important;width:auto!important;height:auto!important;max-width:none!important;z-index:auto!important;backdrop-filter:none!important;border-top:1px solid rgba(255,255,255,.10);margin:0;padding:34px 20px 6px;background:#000;font-family:'Inter', 'Inter Fallback R', 'Inter Fallback A', system-ui,-apple-system,sans-serif}
+.sf-nav-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:26px 28px}
+.sf-nav h3{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#a3a3a3;margin:0 0 12px;font-weight:600;font-family:inherit}
+.sf-nav ul{list-style:none;margin:0;padding:0}
+.sf-nav li{margin:0 0 9px;line-height:1.45}
+.sf-nav a{color:#e6e6e6;text-decoration:none;font-size:15px}
+.sf-nav a:hover,.sf-nav a:focus{color:#f4672a;text-decoration:underline}
+.sf-nav .sf-cur{color:#a3a3a3;font-size:15px}
+@media (max-width:640px){
+  .sf-nav{padding:28px 16px 4px}
+  .sf-nav-in{grid-template-columns:1fr;gap:22px}
+  .sf-nav a,.sf-nav .sf-cur{font-size:16px}
+  .sf-nav li{margin-bottom:11px}
+}
+</style>
+<div class="sf-nav" role="navigation" aria-label="Разделы сайта"><div class="sf-nav-in">
+<div><h3>Услуги</h3><ul>
+<li><a href="/uslugi/razblokirovka-instagram.html">Разблокировка Instagram</a></li>
+<li><a href="/uslugi/vzlom-telegram-vosstanovlenie.html">Взломали Telegram: вернуть доступ</a></li>
+<li><a href="/uslugi/ai-agent.html">AI-агент под ключ</a></li>
+<li><a href="/uslugi/prodvizhenie-instagram.html">Продвижение Instagram</a></li>
+<li><a href="/uslugi/chistka-instagram-ot-botov.html">Чистка Instagram от ботов</a></li>
+<li><a href="/uslugi/">Все услуги и цены</a></li>
+</ul></div>
+<div><h3>Блог по темам</h3><ul>
+<li><a href="/blog/#razblokirovki">Разблокировки и безопасность</a></li>
+<li><a href="/blog/#messengery">Мессенджеры для бизнеса</a></li>
+<li><a href="/blog/#prodvizhenie">Продвижение и контент</a></li>
+<li><a href="/blog/#ai-assistenty">AI-ассистенты и автоматизация</a></li>
+</ul></div>
+<div><h3>Сайт</h3><ul>
+<li><a href="/">Главная</a></li>
+<li><a href="/blog/">Все статьи</a></li>
+<li><a href="/about.html">Обо мне</a></li>
+<li><a href="/kniga.html">Книга Наставники</a></li>
+<li><a href="https://t.me/artsiombahram/6" target="_blank" rel="noopener noreferrer">Telegram-канал: навигатор</a></li>
+</ul></div>
+</div></div>
+<!-- sf-nav:end -->
+<footer>
+  © 2026 Артём Бахрамов &nbsp;·&nbsp; bahramovai.com<br>
+  <a href="privacy.html">Политика конфиденциальности</a> ·
+  <a href="consent.html">Согласие на обработку ПД</a>
+</footer>
+
+<!-- cookie-bar:start -->
+<script>
+(function () {
+  var K = 'bhck';
+  try { if (localStorage.getItem(K)) return; } catch (e) {}
+  try { if (document.cookie.indexOf(K + '=1') > -1) return; } catch (e) {}
+  var root = document.documentElement, bar, done = false;
+  function fit() {
+    if (!bar) return;
+    if (window.matchMedia('(max-width:768px)').matches)
+      root.style.setProperty('--ck-h', Math.max(0, window.innerHeight - bar.getBoundingClientRect().top) + 'px');
+    else root.style.removeProperty('--ck-h');
+    window.dispatchEvent(new Event('scroll'));
+  }
+  function ok() {
+    try { localStorage.setItem(K, '1'); } catch (e) {}
+    try { document.cookie = K + '=1; max-age=31536000; path=/; SameSite=Lax'; } catch (e) {}
+    bar.remove(); bar = null;
+    root.classList.remove('ck-open'); root.style.removeProperty('--ck-h');
+    window.removeEventListener('resize', fit);
+    window.dispatchEvent(new Event('scroll'));
+  }
+  function show() {
+    if (done || window.scrollY < 150) return;
+    done = true;
+    window.removeEventListener('scroll', show);
+    var st = document.createElement('style');
+    st.textContent = '.ck{position:fixed;left:16px;bottom:16px;z-index:999;box-sizing:border-box;max-width:440px;display:flex;align-items:center;gap:14px;padding:12px 12px 12px 16px;background:rgba(14,14,14,.96);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:16px;font-family:Inter,"Inter Fallback R","Inter Fallback A",system-ui,-apple-system,sans-serif;font-size:13.5px;line-height:1.45;color:#cfcfcf;text-align:left}'
+      + '.ck p{margin:0;flex:1}.ck a{color:#f4672a;text-decoration:underline}'
+      + '.ck button{flex:none;height:38px;padding:0 20px;border:0;border-radius:100px;background:#f4672a;color:#000;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}'
+      + '.ck button:hover{background:#ff7d45}.ck button:focus-visible{outline:2px solid #fff;outline-offset:2px}'
+      + '@media (max-width:768px){.ck{left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px));max-width:none;padding:10px 10px 10px 14px;font-size:13px}'
+      + 'html.ck-open .conv-sticky.on,html.ck-open .mobile-cta.visible{bottom:var(--ck-h,0px)}}';
+    document.head.appendChild(st);
+    bar = document.createElement('div');
+    bar.className = 'ck';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Файлы cookie');
+    bar.innerHTML = '<p>Сайт использует cookie и Яндекс Метрику для статистики. <a href="/privacy.html#cookie">Подробнее</a></p><button type="button">Принять</button>';
+    bar.querySelector('button').addEventListener('click', ok);
+    document.body.appendChild(bar);
+    root.classList.add('ck-open');
+    fit();
+    window.addEventListener('resize', fit);
+  }
+  function arm() { window.addEventListener('scroll', show, { passive: true }); show(); }
+  if (document.readyState === 'complete') arm(); else window.addEventListener('load', arm);
+})();
+</script>
+<!-- cookie-bar:end -->
+</body>
+</html>

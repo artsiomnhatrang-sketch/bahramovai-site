@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="/apple-touch-icon.png" sizes="180x180" type="image/png">
+  <title>Страница не найдена - Артём Бахрамов</title>
+
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="Такой страницы нет. Загляните в блог: разборы блокировок Instagram, AI-агенты и автоматизация мессенджеров." />
+  <link rel="alternate" type="application/rss+xml" title="Блог Артёма Бахрамова" href="https://bahramovai.com/feed.xml" />
+
+  <!-- canonical намеренно нет: страница ошибки не должна указывать на себя как на каноничную -->
+  <meta property="og:title" content="Страница не найдена - Артём Бахрамов" />
+  <meta property="og:description" content="Такой страницы нет. Загляните в блог: разборы блокировок Instagram, AI-агенты и автоматизация мессенджеров." />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Артём Бахрамов" />
+  <meta property="og:image" content="https://bahramovai.com/photo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://bahramovai.com/photo.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@800&family=Unbounded:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Ссылки: только фирменный оранжевый. Без синего и фиолетового по умолчанию браузера */
+    a { color: var(--orange, var(--accent, #f4672a)); }
+    /* font-fallback */
+    @font-face { font-family: 'Fira Fallback R'; src: local('Roboto'); size-adjust: 87.2%; font-weight: 100 900; }
+    @font-face { font-family: 'Fira Fallback A'; src: local('Arial'), local('Helvetica'); size-adjust: 78.7%; font-weight: 100 900; }
+    @font-face { font-family: 'Inter Fallback R'; src: local('Roboto'); size-adjust: 117.8%; font-weight: 100 900; }
+    @font-face { font-family: 'Inter Fallback A'; src: local('Arial'), local('Helvetica'); size-adjust: 107.3%; font-weight: 100 900; }
+
+    /* Переход по якорю не должен прятать заголовок под фиксированную шапку.
+       Шапка на сайте 61-81 px в зависимости от страницы и ширины экрана. */
+    [id] { scroll-margin-top: 100px; }
+
+    /* Пункты шапки не ломаются на две строки: на about.html «Обо мне»
+       и «Бонусы» разрывались на 375 px и раздували шапку до 81 px. */
+    nav .nav-link, nav .nav-bonus, nav .nav-logo, nav .nav-cta { white-space: nowrap; }
+    /* Переносы: у заголовка не остаётся одинокого слова на последней строке,
+       у абзаца - тоже. Старые браузеры свойство игнорируют, вреда нет. */
+    h1, h2, h3, h4 { text-wrap: balance; }
+    p, li, figcaption, summary { text-wrap: pretty; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #000000;
+      --orange: #f4672a;
+      --text: #e8e8e8;
+      --muted: #a3a3a3;
+      --border: rgba(255,255,255,0.07);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', 'Inter Fallback R', 'Inter Fallback A', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #fff;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    nav a.nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color .2s; padding: 9px 2px; }
+    nav a.nav-link:hover { color: #fff; }
+    nav a.nav-cta {
+      background: var(--orange);
+      color: #000;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: opacity .2s;
+    }
+    nav a.nav-cta:hover { opacity: .85; }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 160px 24px 100px;
+    }
+
+    .code {
+      font-family: 'Fira Sans Extra Condensed', 'Fira Fallback R', 'Fira Fallback A', sans-serif;
+      font-size: clamp(72.8px, 15.6vw, 124.8px) /*hf*/;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Fira Sans Extra Condensed', 'Fira Fallback R', 'Fira Fallback A', sans-serif;
+      font-size: clamp(31.2px, 6.5vw, 44.2px) /*hf*/;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .lead {
+      font-size: 17px;
+      color: #bdbdbd;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'Fira Sans Extra Condensed', 'Fira Fallback R', 'Fira Fallback A', sans-serif;
+      font-size: 23.4px /*hf*/;
+      font-weight: 600;
+      margin: 48px 0 20px;
+    }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+
+    .card {
+      display: block;
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #0a0a0a;
+      text-decoration: none;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: rgba(244,103,42,0.45); transform: translateY(-2px); }
+    .card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .card p { font-size: 14px; color: var(--muted); margin: 0; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 44px; }
+    .btn {
+      display: inline-block;
+      padding: 13px 26px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .btn-primary { background: var(--orange); color: #000; }
+    .btn-secondary { border: 1px solid var(--border); color: var(--text); }
+    .btn:hover { opacity: .85; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer a { color: var(--muted); }
+
+    /* Как на остальных страницах: на узком экране кнопка из шапки уходит,
+       иначе она вылезает за правый край (на 375 px - на 11 px) */
+    @media (max-width: 768px) {
+      nav a.nav-cta { display: none; }
+    }
+    @media (max-width: 720px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+      nav a.nav-link { font-size: 12px; }
+      main { padding: 130px 20px 70px; }
+    }
+  
+    /* Шапка на узких экранах: после добавления пункта «Услуги» пунктам стало тесно */
+    @media (max-width: 620px) {
+      nav { padding: 14px 16px; gap: 10px; }
+      .nav-logo { font-size: 13px; }
+      .nav-links { gap: 14px; }
+      nav a.nav-link { font-size: 12px; }
+    }
+    @media (max-width: 430px) {
+      .nav-links { gap: 11px; }
+      nav a.nav-link { font-size: 11.5px; }
+      nav a.nav-bonus { padding: 6px 10px; font-size: 11.5px; }
+    }
+  
+        /* Длинные слова не вылезают за край на узких экранах */
+        @media (max-width: 700px) {
+            h1, h2, h3, h4, .hero-title, .article h1, .article h2 { overflow-wrap: break-word; -webkit-hyphens: auto; hyphens: auto; }
+        }
+    </style>
+<!-- nav-orange:start -->
+<style>
+/* Пункты шапки - оранжевые кнопки со стрелкой, как на главной.
+   Стрелка добавляется стилем, разметку шапки на страницах не трогаем. */
+nav a.nav-link, nav a.nav-bonus, nav.header-nav > a:not(.btn-cta) {
+  color: #f4672a !important; font-weight: 600 !important; text-decoration: none !important;
+  border: 1.5px solid #f4672a !important; border-radius: 100px !important;
+  padding: 8px 16px !important; background: transparent !important;
+  white-space: nowrap; transition: background .2s, color .2s;
+}
+nav a.nav-link::after, nav a.nav-bonus::after, nav.header-nav > a:not(.btn-cta)::after { content: " \2192"; }
+nav a.nav-link:hover, nav a.nav-bonus:hover, nav.header-nav > a:not(.btn-cta):hover,
+nav a.nav-link.active { background: #f4672a !important; color: #000 !important; }
+@media (max-width: 768px) {
+  nav a.nav-link, nav a.nav-bonus, nav.header-nav > a:not(.btn-cta) {
+    border: 0 !important; padding: 6px 2px !important; background: transparent !important;
+  }
+  nav a.nav-link:hover, nav a.nav-bonus:hover, nav.header-nav > a:not(.btn-cta):hover,
+  nav a.nav-link.active { background: transparent !important; color: #f4672a !important; }
+}
+/* Шаблон header-nav: рядом с «Бонусами» кнопке заявки на телефоне нет места - прячем, как nav-cta в шаблоне nav-links. */
+@media (max-width: 768px) { nav.header-nav .btn-cta { display: none !important; } }
+/* Телефоны: без стрелок и рамок, иначе пункты не влезают в строку.
+   «Обо мне» прячем, ссылка есть в подвале. */
+@media (max-width: 480px) {
+  nav a.nav-link::after, nav a.nav-bonus::after, nav.header-nav > a:not(.btn-cta)::after { content: ""; }
+  nav a.nav-link, nav a.nav-bonus { font-size: 12.5px !important; padding: 4px 0 !important; }
+  nav.header-nav > a:not(.btn-cta) { padding: 4px 0 !important; }
+  nav .nav-links { gap: 12px !important; }
+  nav.header-nav { gap: 8px !important; }
+  nav a.nav-link[href="/about.html"] { display: none !important; }
+}
+@media (max-width: 359px) {
+  nav .nav-links { gap: 9px !important; }
+  nav a.nav-link, nav a.nav-bonus { font-size: 11.5px !important; }
+  nav .nav-logo { font-size: 12px !important; }
+  nav.header-nav { gap: 6px !important; }
+  nav.header-nav .btn-cta { padding: 6px 8px !important; font-size: 11px !important; }
+  nav.header-nav > a[href$="/blog/"] { display: none !important; }
+  .header-inner .nav-logo { font-size: 12px !important; }
+}
+</style>
+<!-- nav-orange:end -->
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">А<span>.</span>Бахрамов</a>
+  <div class="nav-links">
+    <a href="/uslugi/" class="nav-link">Услуги</a>
+    <a href="/blog/" class="nav-link">Блог</a>
+    <a href="/about.html" class="nav-link">Обо мне</a>
+    <a href="https://t.me/bahramovartsiom" class="nav-cta" target="_blank" rel="noopener noreferrer">Получить бесплатный аудит →</a>
+  </div>
+</nav>
+
+<main>
+  <div class="code">404</div>
+  <h1>Такой страницы нет</h1>
+  <p class="lead">Ссылка устарела или в адресе опечатка. Ниже - то, что читают чаще всего.</p>
+
+  <h2>Популярные разборы</h2>
+  <div class="cards">
+    <a href="/blog/blokirovka-instagram-2026-polnoe-rukovodstvo.html" class="card">
+      <h3>Блокировка Instagram в 2026: что делать</h3>
+      <p>Полное руководство по всем ситуациям - с чего начать.</p>
+    </a>
+    <a href="/blog/instagram-telegram-unblock.html" class="card">
+      <h3>Восстановление Instagram и Telegram</h3>
+      <p>Пошаговая инструкция по возврату доступа.</p>
+    </a>
+    <a href="/blog/ai-agents-2026.html" class="card">
+      <h3>AI-агенты в 2026</h3>
+      <p>Что это, зачем бизнесу и как внедрить.</p>
+    </a>
+    <a href="/blog/telegram-sales-funnel.html" class="card">
+      <h3>Воронка продаж в Telegram</h3>
+      <p>Как собрать и запустить с нуля.</p>
+    </a>
+  </div>
+
+  <div class="actions">
+    <a href="/blog/" class="btn btn-primary">Все статьи блога</a>
+    <a href="/" class="btn btn-secondary">На главную</a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 <a href="/">bahramovai.com</a> · <a href="/blog/">Блог</a> · <a href="https://t.me/bahramovartsiom" target="_blank" rel="noopener noreferrer">Telegram</a></p>
+</footer>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(110081984, "init", {
+        webvisor:true,
+        clickmap:true,
+        accurateTrackBounce:true,
+        trackLinks:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110081984" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<!-- cookie-bar:start -->
+<script>
+(function () {
+  var K = 'bhck';
+  try { if (localStorage.getItem(K)) return; } catch (e) {}
+  try { if (document.cookie.indexOf(K + '=1') > -1) return; } catch (e) {}
+  var root = document.documentElement, bar, done = false;
+  function fit() {
+    if (!bar) return;
+    if (window.matchMedia('(max-width:768px)').matches)
+      root.style.setProperty('--ck-h', Math.max(0, window.innerHeight - bar.getBoundingClientRect().top) + 'px');
+    else root.style.removeProperty('--ck-h');
+    window.dispatchEvent(new Event('scroll'));
+  }
+  function ok() {
+    try { localStorage.setItem(K, '1'); } catch (e) {}
+    try { document.cookie = K + '=1; max-age=31536000; path=/; SameSite=Lax'; } catch (e) {}
+    bar.remove(); bar = null;
+    root.classList.remove('ck-open'); root.style.removeProperty('--ck-h');
+    window.removeEventListener('resize', fit);
+    window.dispatchEvent(new Event('scroll'));
+  }
+  function show() {
+    if (done || window.scrollY < 150) return;
+    done = true;
+    window.removeEventListener('scroll', show);
+    var st = document.createElement('style');
+    st.textContent = '.ck{position:fixed;left:16px;bottom:16px;z-index:999;box-sizing:border-box;max-width:440px;display:flex;align-items:center;gap:14px;padding:12px 12px 12px 16px;background:rgba(14,14,14,.96);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:16px;font-family:Inter,"Inter Fallback R","Inter Fallback A",system-ui,-apple-system,sans-serif;font-size:13.5px;line-height:1.45;color:#cfcfcf;text-align:left}'
+      + '.ck p{margin:0;flex:1}.ck a{color:#f4672a;text-decoration:underline}'
+      + '.ck button{flex:none;height:38px;padding:0 20px;border:0;border-radius:100px;background:#f4672a;color:#000;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}'
+      + '.ck button:hover{background:#ff7d45}.ck button:focus-visible{outline:2px solid #fff;outline-offset:2px}'
+      + '@media (max-width:768px){.ck{left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px));max-width:none;padding:10px 10px 10px 14px;font-size:13px}'
+      + 'html.ck-open .conv-sticky.on,html.ck-open .mobile-cta.visible{bottom:var(--ck-h,0px)}}';
+    document.head.appendChild(st);
+    bar = document.createElement('div');
+    bar.className = 'ck';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Файлы cookie');
+    bar.innerHTML = '<p>Сайт использует cookie и Яндекс Метрику для статистики. <a href="/privacy.html#cookie">Подробнее</a></p><button type="button">Принять</button>';
+    bar.querySelector('button').addEventListener('click', ok);
+    document.body.appendChild(bar);
+    root.classList.add('ck-open');
+    fit();
+    window.addEventListener('resize', fit);
+  }
+  function arm() { window.addEventListener('scroll', show, { passive: true }); show(); }
+  if (document.readyState === 'complete') arm(); else window.addEventListener('load', arm);
+})();
+</script>
+<!-- cookie-bar:end -->
+</body>
+</html>
